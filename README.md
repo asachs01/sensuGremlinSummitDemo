@@ -51,7 +51,7 @@ Config listing:
 
 ## Patterns
 
-### Basic check + check_hook + email 
+### Let Monitoring Know: CPU check + check_hook + email 
 
 To implement this pattern, you'll need the following components:
 
@@ -61,3 +61,11 @@ To implement this pattern, you'll need the following components:
 * `email-basic.yml`
 
 The goal here is just implementing a simple check that will check the CPU utilization and fire off an email if we hit a warning/critical state
+
+### Let The Right People Know: CPU check w/ contact labels + check_hook + handler set 
+
+TODO
+
+### Close the Loop: CPU check + aggregate check w/ remediation annotations, contact labels, fatigue annotations + email 
+
+TODO
