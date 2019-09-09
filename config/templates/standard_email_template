@@ -1,0 +1,25 @@
+<html>
+Greetings,<br>
+<br>
+<h3>Informational Details</h3>
+<hr>
+<b>Check</b>: {{ .Check.Name }}<br>
+<b>Entity</b>: {{ .Entity.Name }}<br>
+<b>State</b>: {{ .Check.State }}<br>
+<b>Occurrences</b>: {{ .Check.Occurrences }}<br>
+<b>Playbook</b>: https://example.com/monitoring/wiki/playbook<br>
+<br>
+<h3>Check Output Details</h3>
+<hr>
+<b>Check Output</b>: {{.Check.Output}}<br>
+<b>Check Hook {{range .Check.Hooks}}Name</b>:  {{.Name}}<br>
+<b>Hook Command</b>:  {{.Command}}<br>
+<b>Hook Output</b>:<br>
+{{.Output}}
+{{end}}
+
+<br>
+#monitoringlove,<br>
+<br>
+Sensu<br>
+</html>

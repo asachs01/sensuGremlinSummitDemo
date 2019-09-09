@@ -1,0 +1,18 @@
+<html>
+Greetings,<br>
+<br>
+This is a note to let you know that automated remediation remediation has run. You can find the details below:<br>
+<br>
+<b>Check</b>: {{ .Check.Name }}<br>
+<b>State</b>: {{ .Check.State }}<br>
+<b>Playbook</b>: https://example.com/monitoring/wiki/playbook<br>
+<br>
+<h3>Check Output Details</h3>
+<hr>
+<b>Check Output</b>:<br>
+{{.Check.Output}}<br>
+<br>
+#monitoringlove,<br>
+<br>
+Sensu<br>
+</html>
