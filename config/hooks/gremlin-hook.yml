@@ -1,0 +1,12 @@
+type: HookConfig
+api_version: core/v2
+metadata:
+  annotations: null
+  labels: null
+  name: halt_gremlin_attacks
+  namespace: default
+spec:
+  command: |-
+    curl -I -X DELETE "https://api.gremlin.com/v1/attacks?teamId=5baa4e48-58df-51c4-8f49-b4eab02becdf" -H "Authorization: Bearer NWJhYTRlNDgtNThkZi01MWM0LThmNDktYjRlYWIwMmJlY2RmOmFhcm9uQHNlbnN1LmlvOjc4OTIwZDc1LWM4YzktMTFlOS1iYjhhLTAyNDJiZDU5ODBhMw==" -H "accept: text/plain" 
+  stdin: false
+  timeout: 60

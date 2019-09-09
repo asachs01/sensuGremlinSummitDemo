@@ -1,0 +1,12 @@
+type: HookConfig
+api_version: core/v2
+metadata:
+  annotations: null
+  labels: null
+  name: get_top_processes
+  namespace: default
+spec:
+  command: |-
+    ps -eo user,pid,cmd:50,%cpu --sort=-%cpu | head -n 6
+  stdin: false
+  timeout: 60

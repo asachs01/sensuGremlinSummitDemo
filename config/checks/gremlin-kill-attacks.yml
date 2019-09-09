@@ -1,0 +1,15 @@
+---
+type: CheckConfig
+api_version: core/v2
+metadata:
+  name: curl-kill-gremlin-attacks
+  namespace: default
+  labels:
+    contacts: helpdesk,ops
+spec:
+  command: |-
+    curl -I -s -X DELETE "https://api.gremlin.com/v1/attacks?teamId=5baa4e48-58df-51c4-8f49-b4eab02becdf" -H "Authorization: Bearer $GREMLIN_API_TOKEN" -H "accept: text/plain" 
+  publish: false
+  interval: 10 # not used
+  handlers:
+  - email-remediation

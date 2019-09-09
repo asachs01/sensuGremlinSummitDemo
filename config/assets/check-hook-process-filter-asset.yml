@@ -1,0 +1,18 @@
+---
+type: Asset
+api_version: core/v2
+metadata:
+  name: sensu-go-hook-has-process-filter
+  labels: 
+  annotations:
+    io.sensu.bonsai.url: https://bonsai.sensu.io/assets/asachs01/sensu-go-hook-has-process-filter
+    io.sensu.bonsai.api_url: https://bonsai.sensu.io/api/v1/assets/asachs01/sensu-go-hook-has-process-filter
+    io.sensu.bonsai.tier: Community
+    io.sensu.bonsai.version: 0.0.3
+    io.sensu.bonsai.namespace: asachs01
+    io.sensu.bonsai.name: sensu-go-hook-has-process-filter
+    io.sensu.bonsai.tags: prerelease, testing, filter, check_hook
+spec:
+  url: https://assets.bonsai.sensu.io/1a5f424fe60f0df2f98616ad455e112ea222086f/sensu-go-hook-has-process-filter_0.0.3.tar.gz
+  sha512: c05e89d7dee3a139714ad461e64098aa8c1474cb711803f4e06f51b9e4860c3ee0c55e14847503bdb91b24b85db8079025df35587f6b8cb678e14464595e0b42
+  filters: []

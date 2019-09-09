@@ -1,0 +1,10 @@
+type: Handler
+api_version: core/v2
+metadata:
+  name: email-set
+  namespace: default
+spec:
+  handlers:
+  - email-ops
+  - email-helpdesk
+  type: set

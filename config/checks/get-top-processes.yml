@@ -1,0 +1,16 @@
+---
+type: CheckConfig
+api_version: core/v2
+metadata:
+  name: get-top-processes
+  namespace: default
+  labels:
+    contacts: ops,helpdesk
+spec:
+  command: |-
+    ps -eo user,pid,cmd:50,%cpu --sort=-%cpu | head -n 6
+  publish: false
+  interval: 10 # not used
+  handlers:
+  - email-remediation
+ 

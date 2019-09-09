@@ -1,0 +1,38 @@
+api_version: core/v2
+type: CheckConfig
+metadata:
+  namespace: default
+  name: sensu-gremlin-app-aggregate
+  labels:
+    contacts: ops,helpdesk
+  annotations:
+    sensu.io/plugins/remediation/config/actions: |
+      [
+        {
+          "description": "Get a list of running processes",
+          "request": "get-top-processes",
+          "occurrences": [ 3 ],
+          "severities": [ 1,2 ],
+          "subscriptions": ["caching_servers"]
+        },
+        {
+          "description": "Kill all running attacks",
+          "request": "curl-kill-gremlin-attacks",
+          "occurrences": [ 5 ],
+          "severities": [ 2 ]
+        }
+      ]
+    fatigue_check/occurrences: '3'
+    fatigue_check/interval: '300'
+    fatigue_check/allow_resolution: 'false'
+spec:
+  runtime_assets:
+  - sensu-aggregate-check
+  command: sensu-aggregate-check --api-user=admin --api-pass=1x4G6TqeE4ZwkhN2hbRgwYlN --check-labels='aggregate=cpu-caching,app_group=caching_servers' --warn-percent=50 --crit-percent=75
+  subscriptions:
+  - backend
+  publish: true
+  interval: 10
+  handlers:
+  - email-set
+  - remediation

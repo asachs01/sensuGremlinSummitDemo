@@ -1,0 +1,12 @@
+---
+type: EventFilter
+api_version: core/v2
+metadata:
+  name: contact_ops
+  namespace: default
+spec:
+  action: allow
+  runtime_assets:
+    - sensu-go-has-contact-filter
+  expressions:
+    - has_contact(event, 'ops')

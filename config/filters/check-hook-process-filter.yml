@@ -1,0 +1,12 @@
+---
+type: EventFilter
+api_version: core/v2
+metadata:
+  name: hook_process_gremlin
+  namespace: default
+spec:
+  action: allow
+  runtime_assets:
+    - sensu-go-hook-has-process-filter
+  expressions:
+    - has_hook_process(event)

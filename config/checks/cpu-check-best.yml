@@ -1,0 +1,29 @@
+type: CheckConfig
+api_version: core/v2
+metadata:
+  name: check-cpu-best
+  namespace: default
+  labels:
+    aggregate: cpu-caching
+    app_group: caching_servers
+  annotations:
+    fatigue_check/occurrences: '6'
+    fatigue_check/interval: '300'
+    fatigue_check/allow_resolution: 'false'
+spec:
+  command: sensu-go-cpu-check -w 60 -c 85
+  runtime_assets:
+  - sensu-go-cpu-check-linux
+  interval: 10
+  publish: true
+  output_metric_format: nagios_perfdata
+  output_metric_handlers: ["influxdb"]
+  check_hooks:
+  - warning:
+    - get_top_processes
+  - critical:
+    - get_top_processes
+  subscriptions:
+  - caching_servers
+  handlers:
+  - email-set

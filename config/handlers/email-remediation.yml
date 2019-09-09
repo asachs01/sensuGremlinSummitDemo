@@ -1,0 +1,15 @@
+---
+api_version: core/v2
+type: Handler
+metadata:
+  namespace: default
+  name: email-remediation
+spec:
+  type: pipe
+  command: sensu-email-handler -f email@example.com -t email@example.com -s smtp.gmail.com -S "Sensu Remediation Alert - {{.Entity.Name}}/{{.Check.Name}} {{.Check.State}}" -T "/etc/sensu/remediation_template"
+  env_vars:
+  - SMTP_PASSWORD=XXXXXXXXXXXXXXXXXXXXXX
+  - SMTP_USERNAME=email@example.com
+  timeout: 10
+  runtime_assets:
+  - sensu-email-handler

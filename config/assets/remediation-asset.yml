@@ -1,0 +1,8 @@
+type: Asset
+api_version: core/v2
+metadata:
+  name: sensu-go-remediation-handler
+  namespace: default
+spec:
+  url: https://github.com/calebhailey/sensu-go-remediation-handler/releases/download/0.9.0/sensu-go-remediation-handler_0.9.0_linux_amd64.tar.gz
+  sha512: 5a5f07a3009f0f7940f43f01d43cae53c91e052d6ebb5107016658af8fd8b3194eb9ec93642710eeeba5ae1f7efdec5adc30328a9243ac87222fa181a432df3f

@@ -1,0 +1,17 @@
+---
+type: Asset
+api_version: core/v2
+metadata:
+  name: sensu-aggregate-check
+  labels: 
+  annotations:
+    sensio.io.bonsai.url: https://assets.bonsai.sensu.io/c0e2af9f04f1e4089eb6c9d639ad8f856fca2316/sensu-aggregate-check_0.0.7_linux_amd64.tar.gz
+    sensio.io.bonsai.tier: Community
+    sensio.io.bonsai.version: 0.0.7
+    sensio.io.bonsai.tags: check, aggregate
+spec:
+  url: https://assets.bonsai.sensu.io/c0e2af9f04f1e4089eb6c9d639ad8f856fca2316/sensu-aggregate-check_0.0.7_linux_amd64.tar.gz
+  sha512: de6f2f5901b926591749dcd67b86283070867a1c2951beb1421a528ae97269ec7a6e73a35fbbbe6f1e06e8b9147b3aec234254f2208ed193ad465c1da1d92bb0
+  filters:
+  - entity.system.os == 'linux'
+  - entity.system.arch == 'amd64'

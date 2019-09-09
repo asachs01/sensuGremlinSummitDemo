@@ -1,0 +1,16 @@
+---
+type: Asset
+api_version: core/v2
+metadata:
+  name: sensu-slack-handler
+  labels: 
+  annotations:
+    io.sensio.bonsai.url: https://bonsai.sensu.io/assets/sensu/sensu-slack-handler
+    io.sensio.bonsai.api_url: https://bonsai.sensu.io/api/v1/assets/sensu/sensu-slack-handler/1.0.3/release_asset_builds
+    io.sensio.bonsai.tier: Supported
+    io.sensio.bonsai.version: 1.0.3
+    io.sensio.bonsai.tags: ''
+spec:
+  url: https://assets.bonsai.sensu.io/3149de09525d5e042a83edbb6eb46152b02b5a65/sensu-slack-handler_1.0.3_linux_amd64.tar.gz
+  sha512: 68720865127fbc7c2fe16ca4d7bbf2a187a2df703f4b4acae1c93e8a66556e9079e1270521999b5871473e6c851f51b34097c54fdb8d18eedb7064df9019adc8
+

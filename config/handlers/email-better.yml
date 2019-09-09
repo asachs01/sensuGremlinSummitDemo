@@ -1,0 +1,19 @@
+---
+api_version: core/v2
+type: Handler
+metadata:
+  namespace: default
+  name: email-better
+spec:
+  type: pipe
+  command: sensu-email-handler -f email@example.com -t email@example.com -s smtp.gmail.com -T "/etc/sensu/basic-email-template"
+  env_vars:
+  - SMTP_PASSWORD=XXXXXXXXXXXXXXXXXXXXXX
+  - SMTP_USERNAME=email@example.com
+  timeout: 10
+  runtime_assets:
+  - sensu-email-handler
+  filters:
+  - hook_process_gremlin
+  - is_incident
+  - not_silenced

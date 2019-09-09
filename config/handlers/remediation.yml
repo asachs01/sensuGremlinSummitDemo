@@ -1,0 +1,17 @@
+---
+type: Handler
+api_version: core/v2
+metadata:
+  name: remediation
+  namespace: default
+spec:
+  type: pipe
+  command: sensu-go-remediation-handler
+  timeout: 10
+  runtime_assets:
+  - sensu-go-remediation-handler
+  env_vars:
+  - "SENSU_API_URL=http://127.0.0.1:8080"
+  - "SENSU_API_CERT_FILE="
+  - "SENSU_API_USER=admin"
+  - "SENSU_API_PASS=1x4G6TqeE4ZwkhN2hbRgwYlN"

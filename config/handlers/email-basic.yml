@@ -1,0 +1,18 @@
+---
+api_version: core/v2
+type: Handler
+metadata:
+  namespace: default
+  name: email-basic
+spec:
+  type: pipe
+  command: sensu-email-handler -f email@example.com -t email@example.com -s smtp.gmail.com -H
+  env_vars:
+  - SMTP_PASSWORD=XXXXXXXXXXXXXXXXXXXXXX
+  - SMTP_USERNAME=email@example.com
+  timeout: 10
+  runtime_assets:
+  - sensu-email-handler
+  filters:
+  - is_incident
+  - not_silenced

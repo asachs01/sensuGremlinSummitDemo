@@ -1,0 +1,18 @@
+---
+type: Asset
+api_version: core/v2
+metadata:
+  name: sensu-go-has-contact-filter
+  labels: 
+  annotations:
+    io.sensu.bonsai.url: https://bonsai.sensu.io/assets/sensu/sensu-go-has-contact-filter
+    io.sensu.bonsai.api_url: https://bonsai.sensu.io/api/v1/assets/sensu/sensu-go-has-contact-filter
+    io.sensu.bonsai.tier: Community
+    io.sensu.bonsai.version: 0.2.0
+    io.sensu.bonsai.namespace: sensu
+    io.sensu.bonsai.name: sensu-go-has-contact-filter
+    io.sensu.bonsai.tags: eventfilter
+spec:
+  url: https://assets.bonsai.sensu.io/ff68b326056b1641a1a00ca2fb4f0246bb19a9d0/sensu-go-has-contact-filter_0.2.0.tar.gz
+  sha512: d07584ddf9d44b3f68102df7038070995d2001e1b826a3fe0d244f6e0fd69b76f29b853a13fcd8841bdb3adebe8a84b3f64247367ef1c9f364c04c5b8ecc16e6
+  filters: []

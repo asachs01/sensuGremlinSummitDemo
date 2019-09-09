@@ -1,0 +1,17 @@
+type: CheckConfig
+api_version: core/v2
+metadata:
+  name: check-cpu
+  namespace: default
+spec:
+  command: sensu-go-cpu-check -w 70 -c 85
+  runtime_assets:
+  - sensu-go-cpu-check-linux
+  interval: 10
+  publish: true
+  output_metric_format: nagios_perfdata
+  output_metric_handlers: ["influxdb"]
+  handlers:
+  - email-basic
+  subscriptions:
+  - caching_servers
