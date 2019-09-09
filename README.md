@@ -49,3 +49,15 @@ Config listing:
     `-- standard_email_template
 ```
 
+## Patterns
+
+### Basic check + check_hook + email 
+
+To implement this pattern, you'll need the following components:
+
+* `assets/cpu-check-asset.yml`
+* `checks/cpu-check-basic.yml`
+* `hooks/get_top_processes.yml`
+* `email-basic.yml`
+
+The goal here is just implementing a simple check that will check the CPU utilization and fire off an email if we hit a warning/critical state
