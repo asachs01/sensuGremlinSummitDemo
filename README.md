@@ -64,8 +64,39 @@ The goal here is just implementing a simple check that will check the CPU utiliz
 
 ### Let The Right People Know: CPU check w/ contact labels + check_hook + handler set 
 
-TODO
+This pattern builds on the last pattern and adds a few things:
+
+* Filtering
+  * [Contact routing using labels](https://bonsai.sensu.io/assets/sensu/sensu-go-has-contact-filter)
+  * [Hook processes](https://bonsai.sensu.io/assets/asachs01/sensu-go-hook-has-process-filter)(currently hardcoded to `gremlin` for the demo)
+* Handler sets
+* Templates for email
+
+To implement this pattern, you'll need:
+
+* Uses the following filters/handlers
+  * Filters
+    * `filters/has-contact-helpdesk.yml`
+    * `filters/has-contact-ops.yml`
+  * Handlers
+    * `handlers/email-set.yml`
+    * `handlers/email-helpdesk`
+    * `handlers/email-ops`
+  * Templates
+    * `templates/standard_email_template`
+
+There are some key bits required to make this component work:
+
+* The check must have the necessary labels
+* The check must also be performing a check_hook
+* The handlers must have `hook_process_gremlin` and `has_contact_{ops,helpdesk}`
+
+You'll notice in the templates that we can wrap our template with some HTML to format things and make it a bit prettier.
 
 ### Close the Loop: CPU check + aggregate check w/ remediation annotations, contact labels, fatigue annotations + email 
 
-TODO
+This pattern takes what we've implemented previously and builds on it by adding:
+
+* Fatigue check filtering
+* Automated remediation
+* Unscheduled/unpublished checks
